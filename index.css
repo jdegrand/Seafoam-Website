@@ -1,0 +1,111 @@
+html {
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+  
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    left: 50%;
+    top: 25%;
+    z-index: 1;
+    max-width: 1920px;
+    width: 200%;
+    display: block;
+    transition: 0.5s;
+    transform: translate(-25%);
+}
+
+/* @media only screen and (min-width: 800px) {
+    canvas {
+        top: -10%;
+    }
+} */
+
+.title-container {
+    box-sizing: border-box;
+    background-color: aquamarine;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    z-index: 2;
+    border-bottom-left-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+}
+
+.body-container {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    z-index: 2;
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.title {
+    color: black;
+    font: normal normal bold 75px/90px Verdana;
+    z-index: 2;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+#loading {
+    padding: 40px;
+    background-color: #bbbbbb;
+    border: none;
+    font-size: 55px;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 1s;
+    width: 100%;
+    max-width: 438px;
+}
+
+#loading-bar {
+    margin-top: 15px;
+    padding: 10px;
+    border: 5px solid #bbbbbb;
+    border-radius: 10px;
+    max-width: 390px;
+    width: 90%;
+    height: 30px;
+}
+
+#loader {
+    width: 0;
+    height: 100%;
+    background-color: #bbbbbb;
+    transition: 2s;
+}
