@@ -13,8 +13,8 @@ body {
 canvas {
     left: 50%;
     z-index: 1;
-    max-width: 1500px;
     width: 200%;
+    min-width: 1920px;
     display: block;
     transition: 0.5s;
 }
@@ -27,7 +27,8 @@ canvas {
     position: -moz-sticky;
     position: -o-sticky;
     position: -ms-sticky;
-    top: 0;
+    top: -30%;
+    overflow: hidden;
 }
 
 
