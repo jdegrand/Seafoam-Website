@@ -16,8 +16,7 @@ canvas {
     z-index: 1;
     max-width: 1500px;
     width: 200vw;
-    height: min(1500px/16*9, calc(200vw/16*9));
-
+    height: min(1500px/1.5, calc(200vw/1.5));
     display: block;
     transition: 0.5s;
 }
@@ -30,8 +29,14 @@ canvas {
     position: -moz-sticky;
     position: -o-sticky;
     position: -ms-sticky;
-    top: 0;
+    top: calc(-10%);
     overflow: hidden;
+}
+
+@media only screen and (max-width: 680px) {
+    .canvas-container {
+        top: calc(15%);
+    }
 }
 
 
