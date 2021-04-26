@@ -6,30 +6,30 @@ html {
   
 body {
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden !important;
+    position: relative;
 }
 
 canvas {
+    left: 50%;
+    z-index: 1;
+    max-width: 1500px;
+    width: 200%;
+    display: block;
+    transition: 0.5s;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    position: sticky;
     position: -webkit-sticky;
     position: -moz-sticky;
     position: -o-sticky;
     position: -ms-sticky;
-    position: sticky;
-    left: 50%;
-    top: 25%;
-    z-index: 1;
-    max-width: 1920px;
-    width: 200%;
-    display: block;
-    transition: 0.5s;
-    transform: translate(-25%);
+    top: 0;
 }
 
-/* @media only screen and (min-width: 800px) {
-    canvas {
-        top: -10%;
-    }
-} */
 
 .title-container {
     box-sizing: border-box;

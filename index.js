@@ -4,6 +4,8 @@ const ctx = canvas.getContext("2d");
 
 const frameCount = 250;
 
+const preloaded = false;
+
 // Gets local image files
 const getImage = frameNumber => {
   return `/assets/${frameNumber.toString().padStart(4, '0')}.jpg`;
@@ -40,18 +42,18 @@ const load = async function loadAllImages() {
     return images_loaded;
 };
 
-let images = [];
-(async() => {
-    images = await load();
-    ctx.drawImage(images[0],0,0);
-})();
+// let images = [];
+// (async() => {
+//     images = await load();
+//     ctx.drawImage(images[0],0,0);
+// })();
 
 const updateImage = frame => {
     ctx.drawImage(images[frame], 0, 0);
   }
 
 // https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
-window.addEventListener('scroll', () => {  
+window.addEventListener('scroll', () => {
     const scrollTop = document.documentElement.scrollTop;
     const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScrollTop;
@@ -61,7 +63,16 @@ window.addEventListener('scroll', () => {
     );
 
     requestAnimationFrame(() => {
-        updateImage(frameIndex);
+        if (preloaded) {
+            updateImage(frameIndex);
+        } else {
+            const img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+            }
+
+            img.src = `/assets/${frameIndex.toString().padStart(4, '0')}.jpg`;
+        }
     });
 });
 
