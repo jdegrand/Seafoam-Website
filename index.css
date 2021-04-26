@@ -7,14 +7,17 @@ html {
 body {
     margin: 0;
     overflow-x: hidden !important;
+    overflow: hidden;
     position: relative;
 }
 
 canvas {
     left: 50%;
     z-index: 1;
-    width: 200%;
-    min-width: 1920px;
+    max-width: 1500px;
+    width: 200vw;
+    height: min(1500px/16*9, calc(200vw/16*9));
+
     display: block;
     transition: 0.5s;
 }
@@ -27,7 +30,7 @@ canvas {
     position: -moz-sticky;
     position: -o-sticky;
     position: -ms-sticky;
-    top: -30%;
+    top: 0;
     overflow: hidden;
 }
 

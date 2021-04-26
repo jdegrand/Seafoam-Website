@@ -51,7 +51,7 @@ const updateImage = frame => {
   }
 
 // https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
-window.addEventListener('scroll', () => {  
+window.addEventListener('scroll', () => {
     const scrollTop = document.documentElement.scrollTop;
     const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScrollTop;
