@@ -12,8 +12,9 @@ function handleScroll(event) {
 }
 
 function finishedLoadingVideo(event) {
-   videoDuration = video.duration;
-   window.addEventListener('scroll', handleScroll);
+    video.pause();
+    videoDuration = video.duration;
+    window.addEventListener('scroll', handleScroll);
 }
 
 video.addEventListener('loadeddata', finishedLoadingVideo);
