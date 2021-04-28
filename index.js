@@ -7,7 +7,6 @@ function handleScroll(event) {
     const scrollTop = document.documentElement.scrollTop;
     const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
     let currentTime = scrollTop / maxScrollTop * videoDuration;
-    console.log(currentTime);
     video.currentTime = currentTime;
 }
 
