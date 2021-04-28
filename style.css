@@ -14,7 +14,7 @@ body {
     position: sticky;
     height: 100vh;
     top: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 video {
@@ -26,9 +26,20 @@ video {
 }
 
 @media only screen and (max-width: 800px) {
+    .video-container {
+        top: calc(15%);
+    }
+
     video {
         left: 50%;
         margin-left: -400px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .video-container {
+        top: calc(-5%);
+        height: 110vh;
     }
 }
 
